@@ -1,0 +1,46 @@
+<div class="row g-2 d-flex align-items-center justify-content-between w-100 border-bottom border-tertiary py-2">
+
+
+    <div class="col-12 col-sm-6 col-md-4">
+        
+        {% if task.status == 'Pendente' %}
+            <span class="text-primary me-3">{{ task.descricao }}</span>
+        {% else %}
+            <span class="text-secondary text-decoration-line-through">{{ task.descricao }}</span>
+        {% endif %}
+
+        <span class="text-secudary me-3">{{ task.data.strftime('%d/%m/%Y') }}</span>
+        {% if status == pedente %}
+        <span class="text-danger me-3">{{ task.status }}</span>
+        {% else %}
+        <span class="text-success me-3">{{ task.status }}</span>
+        {% endif %}
+    </div>
+
+    <div class="botoes col-12 col-sm-6 col-md-4 d-flex justify-content-end">
+
+        {% if task.status == 'Pendente' %}
+
+        <a href="/alterarstatus/{{ task.id }}">
+            <button class="btn btn-success me-2">Concluir</button>
+        </a>
+
+
+        <a class="me-2" href="/editartask/{{ task.id }}">
+            <button class="btn btn-warning me-2">Editar</button>
+        </a>
+
+        {% else %}
+
+        <a href="/alterarstatus/{{ task.id }}">
+            <button class="btn btn-success me-2">Reabrir</button>
+        </a>
+        
+        <a class="me-2" href="/excluir/{{ task.id }}">
+            <button class="btn btn-danger me-2">Excluir</button>
+        </a>
+
+        {% endif %}
+    </div>
+
+</div>

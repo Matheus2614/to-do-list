@@ -1,0 +1,24 @@
+<div class="tasks d-flex flex-column justify-content-center align-items-center w-100">
+
+    
+
+    {% if tasks %}
+        <h2 class="mt-3">Sua lista</h2>
+        {% for task in tasks %}
+
+            {% include 'components/task.html' %}
+
+        {% endfor %}
+
+
+    {% else %}
+        <img src="../../static/img/img.jpg" alt="" class="img-fluid mt-3" style="height: 200px;">
+        <p>Não há tarefas cadastradas!</p>
+
+    {% endif %}
+
+    {% if editartask %}
+    <a class="m-3 text-white p-2 bg-black rounded" href="/">Voltar</a>
+    {% endif %}
+
+</div>

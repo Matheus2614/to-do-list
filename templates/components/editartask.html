@@ -1,0 +1,9 @@
+<div class="editartask">
+    <form action="/editartask/{{ task.id }}" method="post">
+        <h2>Editar tarefa</h2>
+        <label>Descrição:</label>
+        <input type="text" name="descricao" value="{{ task.descricao}}" required>
+        <label>Data da tarefa:</label>
+        <input type="date" name="data" value="{{ task.data }}" required>
+        <button class="bg-success text-white rounded" type="submit">Salvar Edições</button>
+    </form>
